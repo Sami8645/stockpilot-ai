@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockPilot AI — Tokenized Stock Autopilot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="brand"><span class="logo">SP</span> StockPilot <b>AI</b></div>
+    <div class="navlinks"><a href="#how">How it works</a><a href="#portfolio">Portfolio</a></div>
+    <button id="walletBtn" class="secondary">Connect Wallet</button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="badge">● BUILT FOR TOKENIZED STOCKS ON SOLANA</div>
+      <h1>Your investments.<br><span>On autopilot.</span></h1>
+      <p>Tell StockPilot your goal. Get a diversified tokenized stock portfolio in seconds.</p>
+      <div class="promptCard">
+        <label>🤖 Ask StockPilot</label>
+        <div class="promptRow">
+          <input id="goalInput" value="I have $500. Build me a balanced AI stock portfolio." />
+          <button id="generateBtn">Generate ✨</button>
+        </div>
+        <div class="chips">
+          <button class="chip" data-prompt="Invest $100 in technology stocks">Tech $100</button>
+          <button class="chip" data-prompt="Build a low risk portfolio with $1000">Low Risk</button>
+          <button class="chip" data-prompt="Create an aggressive AI portfolio with $500">AI Growth</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="grid">
+      <div class="panel">
+        <div class="panelHead"><div><p class="eyebrow">AI GENERATED</p><h2 id="portfolioTitle">AI Leaders Portfolio</h2></div><span class="risk" id="risk">BALANCED</span></div>
+        <div id="allocation"></div>
+        <div class="total"><span>Investment amount</span><strong id="totalAmount">$500</strong></div>
+        <button id="investBtn" class="primary full">Review & Invest on Solana →</button>
+        <p id="status" class="status">Demo mode — no real funds are moved.</p>
+      </div>
+
+      <div class="panel health">
+        <p class="eyebrow">PORTFOLIO HEALTH</p>
+        <div class="score"><span id="score">86</span><small>/100</small></div>
+        <div class="healthRow"><span>Diversification</span><b>★★★★☆</b></div>
+        <div class="healthRow"><span>Risk level</span><b id="riskText">Medium</b></div>
+        <div class="healthRow"><span>Sector exposure</span><b>Technology</b></div>
+        <div class="tip">💡 <span id="tip">Balanced exposure with a small USDC reserve for flexibility.</span></div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div><span>01</span><h3>Describe your goal</h3><p>Use natural language. No investing jargon required.</p></div>
+      <div><span>02</span><h3>Review allocation</h3><p>AI builds a transparent basket of tokenized stocks.</p></div>
+      <div><span>03</span><h3>Invest & automate</h3><p>Approve a Solana transaction and enable recurring buys.</p></div>
+    </section>
+
+    <section class="autopilot panel">
+      <div><p class="eyebrow">AUTOPILOT</p><h2>Recurring investing, simplified.</h2><p>Set a target and let your strategy stay on track.</p></div>
+      <div class="autoControls">
+        <label>Amount <input id="recurringAmount" type="number" value="50" min="1"></label>
+        <label>Frequency <select id="frequency"><option>Weekly</option><option selected>Monthly</option></select></label>
+        <button id="autoBtn" class="primary">Enable Autopilot</button>
+      </div>
+      <p id="autoStatus" class="status"></p>
+    </section>
+  </main>
+
+  <footer>StockPilot AI • Hackathon MVP • Solana-ready investment automation demo</footer>
+  <script src="app.js"></script>
+</body>
+</html>
